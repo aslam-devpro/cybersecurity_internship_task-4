@@ -1,0 +1,25 @@
+Commands Used:
+
+# Install and enable UFW
+sudo apt update
+sudo apt install ufw
+sudo ufw enable
+
+# List current rules
+sudo ufw status numbered
+
+# Block Telnet (port 23)
+sudo ufw deny 23
+sudo ufw status numbered
+
+# Test the rule
+telnet localhost 23
+
+# Allow SSH (port 22)
+sudo ufw allow 22
+sudo ufw status numbered
+
+# Remove Telnet block rule (note: rule numbers may change)
+sudo ufw delete <rule_number_of_23>
+sudo ufw delete <rule_number_of_23 (v6)>
+sudo ufw status numbered
